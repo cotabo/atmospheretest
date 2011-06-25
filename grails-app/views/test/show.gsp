@@ -27,7 +27,7 @@
     function callback2(response) {
         $.atmosphere.log('info', ["response.transport: " + response.transport]);
         if (response.status == 200 && response.state != 'connected' && response.state != 'closed') {
-             var data = response.responseBody;                
+            var data = response.responseBody;                
             var positioning = $.parseJSON(data);                
             $('#box').animate(positioning);
         }
@@ -39,7 +39,7 @@
     var subscribeChannel = function(channelId) {
     	//Closing all active requests if there are any
     	$.atmosphere.close(); 
-        $.atmosphere.subscribe('${resource(dir: '/atmosphere/boxmovement?boardId=')}'+channelId,
+        $.atmosphere.subscribe('${resource(dir: '/atmosphere/boardupdate?boardId=')}'+channelId,
         	callback2,
         	//websocket doesn't work with my current Jetty - check why. Seems that it uses the wrong Servelt (comet)
         	$.atmosphere.request={transport:'websocket', fallbackTransport:'streaming'}
