@@ -84,10 +84,8 @@ log4j = {
            'net.sf.ehcache.hibernate'
 
     warn   'org.mortbay.log'
-	debug  'org.atmosphere.cpr',
-		   'testproject'
+	//debug  'org.atmosphere.cpr'
+		 
 	
 }
 grails.views.javascript.library="jquery"
-grails.plugin.cloudfoundry.username="robertkrombholz@gmx.de"
-grails.plugin.cloudfoundry.password="JQWOgCyu"

@@ -65,8 +65,7 @@ class BoxMovementService {
 				write "resuming"                
 				flush()
 			}
-		} else {			
-			log.debug "Received message on broadcaster [${event.resource.broadcaster.getID()}]: ${event.message}"			
+		} else {								
 			event.resource.response.writer.with {				
 				write "<script>parent.callback('${event.message}');</script>"				
 				flush()
